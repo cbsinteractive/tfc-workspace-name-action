@@ -4,9 +4,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 9,
   },
-  rules: {
-    "no-console": "off",
-  },
+  rules: {},
   env: {
     node: true,
     es6: true,

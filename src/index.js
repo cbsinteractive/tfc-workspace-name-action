@@ -1,1 +1,1 @@
-require("./run")()
+require("./run")(require("@actions/core"))
