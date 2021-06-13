@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/cbsinteractive/normalized-tfc-workspace-name#readme",
   "devDependencies": {
-    "@semantic-release/changelog": "^5.0.1"
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0"
   }
 }
