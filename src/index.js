@@ -1,2 +1,1 @@
-const nameToGreet = "World"
-console.log(`Hello ${nameToGreet}!`)
+require("./run")(require("@actions/core"))
