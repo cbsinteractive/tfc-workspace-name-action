@@ -1,6 +1,5 @@
 module.exports = async (core) => {
   try {
-    const variableName = core.getInput("variableName")
     const workspaceType = core.getInput("type")
     let result
     if (workspaceType === "feature") {
@@ -17,7 +16,7 @@ module.exports = async (core) => {
         `Type should be one of: feature, repo. Got ${workspaceType}`
       )
     }
-    core.setOutput(variableName, result)
+    core.setOutput("workspaceName", result)
   } catch (error) {
     core.setFailed(error.message)
   }

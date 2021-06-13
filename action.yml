@@ -7,9 +7,6 @@ inputs:
   type:
     description: "The type of TFC workspace name. Valid values: feature, repo."
     required: true
-  variableName:
-    description: "The name of the output variable to receive the workspace name."
-    required: true
   featureBranchName:
     description: "The name of the feature branch from which to derive a feature TFC workspace name."
     required: false
@@ -19,3 +16,6 @@ inputs:
   suffix:
     description: "The suffix to append to a repo TFC workspace name."
     required: false
+outputs:
+  workspaceName:
+    description: "The name of the derived TFC workspace."
