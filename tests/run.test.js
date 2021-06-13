@@ -1,10 +1,5 @@
 const { expect, test } = require("@jest/globals")
 const run = require("../src/run")
-// const core = require("@actions/core")
-// const { expect, beforeEach, jest } = require("@jest/globals")
-// const { describe } = require("yargs")
-
-// const mockCore = jest.mock("@actions/core")
 
 describe("feature branch", () => {
   const testTable = [
@@ -13,19 +8,19 @@ describe("feature branch", () => {
       getInput: {
         variableName: "some-variable",
         type: "feature",
+        featureBranchName: "JIRA-12345_some-feature_with-infra",
       },
-      expectedOutput: [
-        "some-variable",
-        "temporary feature branch workspace value",
-      ],
+      expectedOutput: ["some-variable", "jira12345-somefeature"],
     },
     {
       description: "bar",
       getInput: {
         variableName: "some-variable",
         type: "repo",
+        repoName: "some-repo",
+        suffix: "-some-suffix",
       },
-      expectedOutput: ["some-variable", "temporary repo workspace value"],
+      expectedOutput: ["some-variable", "somerepo-some-suffix"],
     },
   ]
   let core
@@ -51,14 +46,4 @@ describe("feature branch", () => {
       }
     })
   })
-  // test("foo", async () => {
-  //   const core = jest.fn()
-  //   core.getInput = jest.fn(() => "feature")
-  //   core.setFailed = jest.fn()
-  //   core.setOutput = jest.fn()
-  //   await run(core)
-  //   expect(core.getInput.mock.calls[0]).toEqual(["variableName"])
-  //   expect(core.setFailed).not.toHaveBeenCalled()
-  //   expect(core.setOutput).toHaveBeenCalledWith("foo", "bar")
-  // })
 })

@@ -1,5 +1,5 @@
 module.exports = {
-  normalize: () => {
-    return "temporary repo workspace value"
+  normalize: (repoName, suffix) => {
+    return `${require("./token").normalize(repoName)}${suffix}`
   },
 }
