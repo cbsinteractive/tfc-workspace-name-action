@@ -4,8 +4,8 @@
   "description": "Github action to normalize Terraform Cloud workspace names",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write src/**",
-    "format-ci": "prettier --check src/**",
+    "format": "prettier --write *.js src/*.js tests/*.js",
+    "format-ci": "prettier --check *.js src/*.js tests/*.js",
     "lint": "eslint src/**",
     "package": "ncc build src/index.js",
     "test": "jest",
