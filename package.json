@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write src/**",
+    "format-ci": "prettier --check src/**",
     "lint": "eslint src/**",
     "package": "ncc build src/index.js",
     "test": "jest",
-    "all": "npm run format && npm run lint && npm test && npm run package"
+    "all": "npm run format-ci && npm run lint && npm test && npm run package"
   },
   "repository": {
     "type": "git",
