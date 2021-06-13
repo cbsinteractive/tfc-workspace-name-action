@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: technote-space/auto-cancel-redundant-workflow@v1
       - uses: actions/checkout@v2
-      # - run: npm install
-      # - run: npm run all
+      - run: npm install
+      - run: npm run all
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
       - uses: cycjimmy/semantic-release-action@v2
