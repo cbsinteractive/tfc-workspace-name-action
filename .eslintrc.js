@@ -1,6 +1,9 @@
 module.exports = {
   plugins: ["jest"],
   extends: ["plugin:github/recommended"],
+  parserOptions: {
+    ecmaVersion: 9,
+  },
   rules: {
     "no-console": "off",
   },
