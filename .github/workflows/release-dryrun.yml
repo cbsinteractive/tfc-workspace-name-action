@@ -1,0 +1,26 @@
+name: Release | Dry Run
+
+on:
+  push:
+    branches-ignore:
+      - v*.x
+
+jobs:
+  release-dryrun:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: technote-space/auto-cancel-redundant-workflow@v1
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run all
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v3.x
+      - uses: cycjimmy/semantic-release-action@v2
+        with:
+          branches: |
+            [
+              "${{ env.GITHUB_REF_SLUG }}"
+            ]
+          dry_run: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
