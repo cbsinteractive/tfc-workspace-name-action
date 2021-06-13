@@ -4,8 +4,12 @@
   "description": "Github action to normalize Terraform Cloud workspace names",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "all": "echo \"Do nothing for now\""
+    "format": "prettier --write *.js src/*.js tests/*.js",
+    "format-ci": "prettier --check *.js src/*.js tests/*.js",
+    "lint": "eslint src/**",
+    "package": "ncc build src/index.js",
+    "test": "jest",
+    "all": "npm run format-ci && npm run lint && npm test && npm run package"
   },
   "repository": {
     "type": "git",
@@ -21,6 +25,12 @@
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/exec": "^5.0.0",
-    "@semantic-release/git": "^9.0.0"
+    "@semantic-release/git": "^9.0.0",
+    "@vercel/ncc": "^0.28.6",
+    "eslint": "^7.28.0",
+    "eslint-plugin-github": "^4.1.3",
+    "eslint-plugin-jest": "^24.3.6",
+    "jest": "^27.0.4",
+    "prettier": "^2.3.1"
   }
 }
