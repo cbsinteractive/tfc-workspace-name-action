@@ -2,6 +2,14 @@
 
 Information for developers.
 
+## Table of Contents
+
+- [Semantic Release](#semantic-release)
+  - [CHANGELOG.md is auto-generated](#changelogmd-is-auto-generated)
+  - [Versioning Strategy](#versioning-strategy)
+  - [Commit Messages](#commit-messages)
+  - [Experimentation](#experimentation)
+
 ## Semantic Release
 
 Releases are published automatically by [semantic-release][]. A [CI workflow][release-workflow-url] is configured to run [semantic-release-action][], which uses the project's release [configuration][release-config-url]. This has a number of implications, described in the sections below.
@@ -47,6 +55,10 @@ As you can see, commit messages aways begin with (and sometimes consist _only_ o
 
 The full Angular Changelog Convention is available [here][angular-changelong-convention].
 
+### Experimentation
+
+Use [Doppler Semantic Release Testing][doppler-semantic-release-testing-url] to practice with this strategy.
+
 [semantic-release]: https://github.com/semantic-release/semantic-release
 [semantic-release-action]: https://github.com/cycjimmy/semantic-release-action
 [release-workflow-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1.x/.github/workflows/release.yml
@@ -55,3 +67,4 @@ The full Angular Changelog Convention is available [here][angular-changelong-con
 [angular-commit-message-conventions-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
 [angular-header-types-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type
 [angular-changelong-convention]: https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular
+[doppler-semantic-release-testing-url]: https://github.com/cbsinteractive/doppler-semantic-release-testing
