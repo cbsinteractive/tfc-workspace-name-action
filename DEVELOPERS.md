@@ -24,24 +24,28 @@ Examples:
     ```
     feat: Some new feature
     ```
+    This causes semantic-release to issue a new minor release.
 * A non-breaking bug fix:
     ```
     fix: Fixed the blow-out in damper 3
     ```
+    This causes semantic-release to issue a new patch release.
 * A documentation-only change:
     ```
     doc: Describe the things
     ```
+    This results in no new release.
 * A breaking change:
     ```shell
     feat: Bring food replicators online
     
     BREAKING CHANGE: New laws of physics
     ```
+    This causes semantic-release to issue a new major release.
 
-See the full list of header types [here][angular-header-types-url].
+As you can see, commit messages aways begin with (and sometimes consist _only_ of) a header. A header declares the **type**, followed by a colon and a short description. See the full list of header types [here][angular-header-types-url].
 
-The Angular Changlog Convention is available [here][angular-changelong-convention].
+The full Angular Changelog Convention is available [here][angular-changelong-convention].
 
 [semantic-release]: https://github.com/semantic-release/semantic-release
 [semantic-release-action]: https://github.com/cycjimmy/semantic-release-action
