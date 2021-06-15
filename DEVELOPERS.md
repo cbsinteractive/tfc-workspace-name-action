@@ -16,7 +16,7 @@ TODO
 
 TODO
 
-#### Commit messages **matter**
+#### Commit messages matter...a lot!
 
 TODO
 
