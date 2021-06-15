@@ -30,7 +30,7 @@ The name of a Terraform Cloud workspace derived from input paramters.
 
 ## Example usage
 
-```
+```yaml
 - uses: cbsinteractive/normalized-tfc-workspace-name@v1.x
   with:
     type: feature
@@ -48,14 +48,6 @@ Produces: `somebranchname`
 ```
 
 Produces: `myproduct-prod`
-
-```yaml
-- uses: cbsinteractive/normalized-tfc-workspace-name@v1.x
-  with:
-    type: repo
-    repoName: ${{ env.GITHUB_REPOSITORY_NAME_PART }}
-    suffix: -prod
-```
 
 [release-badge]: https://img.shields.io/github/workflow/status/cbsinteractive/normalized-tfc-workspace-name/Release?label=Build&logo=github&style=flat-square
 [releases]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/releases
