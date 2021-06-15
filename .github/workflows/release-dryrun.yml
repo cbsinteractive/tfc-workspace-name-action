@@ -14,8 +14,11 @@ jobs:
       - run: npm ci
       - run: npm run all
       - name: Inject slug/short variables
-        uses: rlespinasse/github-slug-action@v3.x
-      - uses: cycjimmy/semantic-release-action@v2
+        uses: rlespinasse/github-slug-action@35d90c4a713487c48ff93473fdff93e8dc1469f3
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@ed6729b716d281c2c4058d3553f3229a80203a79
+        with:
+          semantic_version: 17.4.x
         with:
           branches: |
             [
