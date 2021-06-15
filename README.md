@@ -4,6 +4,18 @@
 
 Generates a Terraform Cloud workspace name normalized according to conventions used by ViacomCBS Doppler.
 
+## Table of Contents
+
+- [Inputs](#inputs)
+  - [type](#type)
+  - [featureBranchName](#featurebranchname)
+  - [repoName](#reponame)
+  - [suffix](#suffix)
+- [Outputs](#outputs)
+  - [workspaceName](#workspacename)
+- [Example Usage](#example-usage)
+- [Contributing](#contributing)
+
 ## Inputs
 
 ### `type`
@@ -48,6 +60,10 @@ Produces: `somebranchname`
 ```
 
 Produces: `myproduct-prod`
+
+## Contributing
+
+Please see [Developers Guide](DEVELOPERS.md).
 
 [release-badge]: https://img.shields.io/github/workflow/status/cbsinteractive/normalized-tfc-workspace-name/Release?label=Build&logo=github&style=flat-square
 [releases]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/releases
