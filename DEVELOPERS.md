@@ -28,35 +28,40 @@ The underpinning of a semantic-release strategy are well-crafted Git commit mess
 
 Examples:
 
-* A new non-breaking feature:
-    ```
-    feat: Some new feature
-    ```
-    This causes semantic-release to issue a new minor release.
-* A non-breaking bug fix:
-    ```
-    fix: Fixed the blow-out in damper 3
-    ```
-    This causes semantic-release to issue a new patch release.
-* A documentation-only change:
-    ```
-    doc: Describe the things
-    ```
-    This results in no new release.
-* A breaking change:
-    ```shell
-    feat: Bring food replicators online
-    
-    BREAKING CHANGE: New laws of physics
-    ```
-    This causes semantic-release to issue a new major release.
-* Reverting a commit:
-    ```shell
-    revert: feat: Some feature
-    
-    This reverts commit <some SHA>
-    ```
-    See [Reverting a Commit](#reverting-a-commit) for more about this use case.
+- A new non-breaking feature:
+  ```
+  feat: Some new feature
+  ```
+  This causes semantic-release to issue a new minor release.
+- A non-breaking bug fix:
+  ```
+  fix: Fixed the blow-out in damper 3
+  ```
+  This causes semantic-release to issue a new patch release.
+- A documentation-only change:
+  ```
+  doc: Describe the things
+  ```
+  This results in no new release.
+- A breaking change:
+
+  ```shell
+  feat: Bring food replicators online
+
+  BREAKING CHANGE: New laws of physics
+  ```
+
+  This causes semantic-release to issue a new major release.
+
+- Reverting a commit:
+
+  ```shell
+  revert: feat: Some feature
+
+  This reverts commit <some SHA>
+  ```
+
+  See [Reverting a Commit](#reverting-a-commit) for more about this use case.
 
 As you can see, commit messages aways begin with (and sometimes consist _only_ of) a header. A header declares the **type**, followed by a colon and a short description. See the full list of header types [here][angular-header-types-url]. The header may also specify a "scope" in parentheses after the type, but for a project of this size, we probably won't need them.
 
@@ -93,9 +98,9 @@ Use [Doppler Semantic Release Testing][doppler-semantic-release-testing-url] to 
 
 [semantic-release]: https://github.com/semantic-release/semantic-release
 [semantic-release-action]: https://github.com/cycjimmy/semantic-release-action
-[release-workflow-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1.x/.github/workflows/release.yml
-[changelog-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1.x/CHANGELOG.md
-[release-config-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1.x/release.config.js
+[release-workflow-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1/.github/workflows/release.yml
+[changelog-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1/CHANGELOG.md
+[release-config-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1/release.config.js
 [angular-commit-message-conventions-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
 [angular-header-types-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type
 [angular-changelong-convention]: https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular
