@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - v*.x
+      - v[1-9]
 
 jobs:
   release:

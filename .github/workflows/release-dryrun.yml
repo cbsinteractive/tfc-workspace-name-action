@@ -3,7 +3,7 @@ name: Release | Dry Run
 on:
   push:
     branches-ignore:
-      - v*.x
+      - v*
 
 jobs:
   release-dryrun:
