@@ -4,7 +4,7 @@ const run = require("../src/run")
 describe("feature branch", () => {
   const testTable = [
     {
-      description: "foo",
+      description: "Derives the expected feature workspace name",
       getInput: {
         type: "feature",
         featureBranchName: "JIRA-12345_some-feature_with-infra",
@@ -12,7 +12,7 @@ describe("feature branch", () => {
       expectedOutput: ["workspaceName", "jira12345-somefeature"],
     },
     {
-      description: "bar",
+      description: "Derives the expected permanent workspace name",
       getInput: {
         type: "repo",
         repoName: "some-repo",
