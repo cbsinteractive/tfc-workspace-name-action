@@ -50,10 +50,42 @@ Examples:
     BREAKING CHANGE: New laws of physics
     ```
     This causes semantic-release to issue a new major release.
+* Reverting a commit:
+    ```shell
+    revert: feat: Some feature
+    
+    This reverts commit <some SHA>
+    ```
+    See [Reverting a Commit](#reverting-a-commit) for more about this use case.
 
-As you can see, commit messages aways begin with (and sometimes consist _only_ of) a header. A header declares the **type**, followed by a colon and a short description. See the full list of header types [here][angular-header-types-url].
+As you can see, commit messages aways begin with (and sometimes consist _only_ of) a header. A header declares the **type**, followed by a colon and a short description. See the full list of header types [here][angular-header-types-url]. The header may also specify a "scope" in parentheses after the type, but for a project of this size, we probably won't need them.
 
 The full Angular Changelog Convention is available [here][angular-changelong-convention].
+
+#### Reverting a Commit
+
+When you revert a commit with `git revert`, git normally proposes a commit message similar to...
+
+```shell
+Revert "feat: Some feature"
+
+This reverts commit <some SHA>
+```
+
+...which does not follow the Angular convention. Fortunately, just a few steps are needed to transform it:
+
+1. Change `Revert` to `revert:`.
+2. Remove the quotes.
+
+Doing so, you wind up with...
+
+```shell
+revert: feat: Some feature
+
+This reverts commit <some SHA>
+```
+
+For more information, see [Revert commits][angular-revert-commits-url] for the Angular documentation on this.
 
 ### Experimentation
 
@@ -67,4 +99,5 @@ Use [Doppler Semantic Release Testing][doppler-semantic-release-testing-url] to 
 [angular-commit-message-conventions-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
 [angular-header-types-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type
 [angular-changelong-convention]: https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular
+[angular-revert-commits-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#revert-commits
 [doppler-semantic-release-testing-url]: https://github.com/cbsinteractive/doppler-semantic-release-testing
