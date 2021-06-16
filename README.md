@@ -43,7 +43,7 @@ The name of a Terraform Cloud workspace derived from input paramters.
 ## Example Usage
 
 ```yaml
-- uses: cbsinteractive/normalized-tfc-workspace-name@v1.x
+- uses: cbsinteractive/normalized-tfc-workspace-name@v1
   with:
     type: feature
     featureBranchName: some-branch-name_with-infra
@@ -52,7 +52,7 @@ The name of a Terraform Cloud workspace derived from input paramters.
 Produces: `somebranchname`
 
 ```yaml
-- uses: cbsinteractive/normalized-tfc-workspace-name@v1.x
+- uses: cbsinteractive/normalized-tfc-workspace-name@v1
   with:
     type: repo
     repoName: my-product
@@ -63,10 +63,10 @@ Produces: `myproduct-prod`
 
 ### Version Selection
 
-To always use the latest available version, choose the `v1.x` branch:
+To always use the latest available version, choose the `v1` branch:
 
 ```yaml
-- uses: cbsinteractive/normalized-tfc-workspace-name@v1.x
+- uses: cbsinteractive/normalized-tfc-workspace-name@v1
 ```
 
 For more stability, choose a specific tag:
