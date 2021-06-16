@@ -24,6 +24,8 @@ There is no `main` branch. Instead, there are one or more "release" branches (cu
 
 When semantic-release produces a new major version, it's important that the commit that causes this be placed on a new release branch. Commits that cause semantic-release to produce a new major version always have a message footer beginning with `BREAKING CHANGE:`. If you ever need to make such a commit, _communicate with the team_ and _make the commit to a new release branch_.
 
+See [Recipes](#recipes) for walkthroughs of specific scenarios you might encounter.
+
 ### Commit Messages
 
 The underpinning of a semantic-release strategy are well-crafted Git commit messages following a specific convention. We use the default [Angular Commit Message Conventions][angular-commit-message-conventions-url].
@@ -107,6 +109,14 @@ This reverts commit <some SHA>
 ```
 
 For more information, see [Revert commits][angular-revert-commits-url] for the Angular documentation on this.
+
+### Recipes
+
+TODO
+
+<!--
+#TODO: Provide walkthroughs for different scenarios a development might encounter, especially how to manage breaking changes.
+-->
 
 ### Experimentation
 
