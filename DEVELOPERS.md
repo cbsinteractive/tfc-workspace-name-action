@@ -20,7 +20,9 @@ semantic-release maintains the [CHANGELOG][changelog-url]. As humans, we focus o
 
 ### Versioning Strategy
 
-There is no `main` branch. Instead there are one or more "release" branches (currently only `v.1x`). This allows users to select a particular major version, as opposed to a particular tag or commit SHA.
+There is no `main` branch. Instead, there are one or more "release" branches (currently only `v1`). This allows users to select a particular major version, as opposed to a particular tag or commit SHA.
+
+When semantic-release produces a new major version, it's important that the commit that causes this be placed on a new release branch. Commits that cause semantic-release to produce a new major version always have a message footer beginning with `BREAKING CHANGE:`. If you ever need to make such a commit, _communicate with the team_ and _make the commit to a new release branch_.
 
 ### Commit Messages
 
@@ -29,15 +31,25 @@ The underpinning of a semantic-release strategy are well-crafted Git commit mess
 Examples:
 
 - A new non-breaking feature:
+
   ```
   feat: Some new feature
+
+  <Describe motivation>
   ```
+
   This causes semantic-release to issue a new minor release.
+
 - A non-breaking bug fix:
+
   ```
   fix: Fixed the blow-out in damper 3
+
+  <Describe motivation>
   ```
+
   This causes semantic-release to issue a new patch release.
+
 - A documentation-only change:
   ```
   doc: Describe the things
@@ -63,7 +75,11 @@ Examples:
 
   See [Reverting a Commit](#reverting-a-commit) for more about this use case.
 
-As you can see, commit messages aways begin with (and sometimes consist _only_ of) a header. A header declares the **type**, followed by a colon and a short description. See the full list of header types [here][angular-header-types-url]. The header may also specify a "scope" in parentheses after the type, but for a project of this size, we probably won't need them.
+As you can see, commit messages aways begin with a header. A header declares the **type**, followed by a colon and a short description. See the full list of header types [here][angular-header-types-url]. The header may also specify a "scope" in parentheses after the type, but for a project of this size, we probably won't need them.
+
+After the header, a message body should explain the motivation for any change, with the exception of "doc:" type commits, for which the description given in the header suffices.
+
+After the message body comes an optional footer. The most common reason to provide a footer is to signal a **breaking change**.
 
 The full Angular Changelog Convention is available [here][angular-changelong-convention].
 
