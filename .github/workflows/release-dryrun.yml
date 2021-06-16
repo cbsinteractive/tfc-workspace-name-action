@@ -18,7 +18,7 @@ jobs:
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@ed6729b716d281c2c4058d3553f3229a80203a79
         with:
-          semantic_version: 17.4.3
+          semantic_version: 17.4.x
           branches: |
             [
               "${{ env.GITHUB_REF_SLUG }}"
