@@ -483,6 +483,8 @@ exports.toCommandValue = toCommandValue;
 module.exports = {
   normalize: (branchName) => {
     return branchName
+      .replace(/^with[-_]?infra[-_]?/i, "")
+      .replace(/[-_]?with[-_]?infra$/i, "")
       .split("_")
       .map(__nccwpck_require__(767).normalize)
       .filter((token) => {
