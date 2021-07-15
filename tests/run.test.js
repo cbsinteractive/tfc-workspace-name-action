@@ -1,10 +1,11 @@
 const { expect, test } = require("@jest/globals")
 const run = require("../src/run")
 
-describe("feature branch", () => {
+describe("Derives the expected feature workspace names", () => {
   const testTable = [
     {
-      description: "Derives the expected feature workspace name",
+      description:
+        "Feature branch; removes dashes; converts undescores to dashes",
       getInput: {
         type: "feature",
         featureBranchName: "JIRA-12345_some-feature_with-infra",
@@ -12,7 +13,40 @@ describe("feature branch", () => {
       expectedOutput: ["workspaceName", "jira12345-somefeature"],
     },
     {
-      description: "Derives the expected permanent workspace name",
+      description: "Feature branch; removes -with-infra suffix",
+      getInput: {
+        type: "feature",
+        featureBranchName: "some-feature-with-infra",
+      },
+      expectedOutput: ["workspaceName", "somefeature"],
+    },
+    {
+      description: "Feature branch; removes with-infra- prefix",
+      getInput: {
+        type: "feature",
+        featureBranchName: "with-infra-some-feature",
+      },
+      expectedOutput: ["workspaceName", "somefeature"],
+    },
+    {
+      description: "Feature branch; leaves embedded -with-infra- alone",
+      getInput: {
+        type: "feature",
+        featureBranchName: "foo-with-infra-bar",
+      },
+      expectedOutput: ["workspaceName", "foowithinfrabar"],
+    },
+    {
+      description: "Feature branch; removes embedded _with-infra_ token",
+      getInput: {
+        type: "feature",
+        featureBranchName: "foo_with-infra_bar",
+      },
+      expectedOutput: ["workspaceName", "foo-bar"],
+    },
+    {
+      description:
+        "Repo-level workspace; removes dashses from repo name; adds suffix",
       getInput: {
         type: "repo",
         repoName: "some-repo",
