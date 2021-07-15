@@ -87,6 +87,6 @@ For maximum stability, choose a specific commit SHA hash:
 
 Please see [Developers Guide](DEVELOPERS.md).
 
-[release-badge]: https://img.shields.io/github/workflow/status/cbsinteractive/tfc-workspace-name-action/Release?label=Build&logo=github&style=flat-square
+[release-badge]: https://github.com/cbsinteractive/tfc-workspace-name-action/actions/workflows/release.yml/badge.svg
 [releases]: https://github.com/cbsinteractive/tfc-workspace-name-action/releases
 [security-recommendation-url]: https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#using-third-party-actions
