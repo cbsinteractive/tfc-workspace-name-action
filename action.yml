@@ -1,4 +1,4 @@
-name: "Normalized Terraform Cloud Worksapce Name"
+name: "TFC Workspace Name Action"
 description: "GitHub Action to generate normalized TFC workspace names"
 runs:
   using: "node12"

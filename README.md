@@ -1,4 +1,4 @@
-# Normalized TFC Workspace Name
+# TFC Workspace Name Action
 
 [![Release][release-badge]][releases]
 
@@ -43,7 +43,7 @@ The name of a Terraform Cloud workspace derived from input paramters.
 ## Example Usage
 
 ```yaml
-- uses: cbsinteractive/normalized-tfc-workspace-name@v1
+- uses: cbsinteractive/tfc-workspace-name-action@v1
   with:
     type: feature
     featureBranchName: some-branch-name_with-infra
@@ -52,7 +52,7 @@ The name of a Terraform Cloud workspace derived from input paramters.
 Produces: `somebranchname`
 
 ```yaml
-- uses: cbsinteractive/normalized-tfc-workspace-name@v1
+- uses: cbsinteractive/tfc-workspace-name-action@v1
   with:
     type: repo
     repoName: my-product
@@ -66,13 +66,13 @@ Produces: `myproduct-prod`
 To always use the latest available version, choose the `v1` branch:
 
 ```yaml
-- uses: cbsinteractive/normalized-tfc-workspace-name@v1
+- uses: cbsinteractive/tfc-workspace-name-action@v1
 ```
 
 For more stability, choose a specific tag:
 
 ```yaml
-- uses: cbsinteractive/normalized-tfc-workspace-name@1.0.0
+- uses: cbsinteractive/tfc-workspace-name-action@1.0.0
 ```
 
 For security reasons, Github only [recommends][security-recommendation-url] pinning to a tag if you trust the code owner.
@@ -80,13 +80,13 @@ For security reasons, Github only [recommends][security-recommendation-url] pinn
 For maximum stability, choose a specific commit SHA hash:
 
 ```yaml
-- uses: cbsinteractive/normalized-tfc-workspace-name@93cc26b399832812dac406b26090080664b5d1eb
+- uses: cbsinteractive/tfc-workspace-name-action@93cc26b399832812dac406b26090080664b5d1eb
 ```
 
 ## Contributing
 
 Please see [Developers Guide](DEVELOPERS.md).
 
-[release-badge]: https://img.shields.io/github/workflow/status/cbsinteractive/normalized-tfc-workspace-name/Release?label=Build&logo=github&style=flat-square
-[releases]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/releases
+[release-badge]: https://img.shields.io/github/workflow/status/cbsinteractive/tfc-workspace-name-action/Release?label=Build&logo=github&style=flat-square
+[releases]: https://github.com/cbsinteractive/tfc-workspace-name-action/releases
 [security-recommendation-url]: https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#using-third-party-actions

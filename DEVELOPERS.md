@@ -124,9 +124,9 @@ Use [Doppler Semantic Release Testing][doppler-semantic-release-testing-url] to 
 
 [semantic-release]: https://github.com/semantic-release/semantic-release
 [semantic-release-action]: https://github.com/cycjimmy/semantic-release-action
-[release-workflow-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1/.github/workflows/release.yml
-[changelog-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1/CHANGELOG.md
-[release-config-url]: https://github.com/cbsinteractive/normalized-tfc-workspace-name/blob/v1/release.config.js
+[release-workflow-url]: https://github.com/cbsinteractive/tfc-workspace-name-action/blob/v1/.github/workflows/release.yml
+[changelog-url]: https://github.com/cbsinteractive/tfc-workspace-name-action/blob/v1/CHANGELOG.md
+[release-config-url]: https://github.com/cbsinteractive/tfc-workspace-name-action/blob/v1/release.config.js
 [angular-commit-message-conventions-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
 [angular-header-types-url]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type
 [angular-changelong-convention]: https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular
