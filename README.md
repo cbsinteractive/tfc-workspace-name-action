@@ -11,6 +11,7 @@ Generates a Terraform Cloud workspace name normalized according to conventions u
   - [featureBranchName](#featurebranchname)
   - [repoName](#reponame)
   - [suffix](#suffix)
+  - [workspacePrefix](#workspaceprefix)
 - [Outputs](#outputs)
   - [workspaceName](#workspacename)
 - [Example Usage](#example-usage)
