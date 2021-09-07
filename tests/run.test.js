@@ -45,6 +45,15 @@ describe("Derives the expected feature workspace names", () => {
       expectedOutput: ["workspaceName", "foo-bar"],
     },
     {
+      description: "Feature branch prefix is supported",
+      getInput: {
+        type: "feature",
+        featureBranchName: "this-is-a-test",
+        workspacePrefix: "foo-",
+      },
+      expectedOutput: ["workspaceName", "foo-thisisatest"],
+    },
+    {
       description:
         "Repo-level workspace; removes dashses from repo name; adds suffix",
       getInput: {
@@ -65,7 +74,7 @@ describe("Derives the expected feature workspace names", () => {
   testTable.forEach((testConfig) => {
     test(testConfig.description, async () => {
       core.getInput.mockImplementation((inputVar) => {
-        return testConfig.getInput[inputVar]
+        return testConfig.getInput[inputVar] || ""
       })
       await run(core)
       if (!testConfig.errorMessage) {
