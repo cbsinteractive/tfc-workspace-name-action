@@ -515,11 +515,14 @@ module.exports = {
 module.exports = async (core) => {
   try {
     const workspaceType = core.getInput("type")
+    const workspacePrefix = core.getInput("workspacePrefix", {
+      required: false,
+    })
     let result
     if (workspaceType === "feature") {
-      result = __nccwpck_require__(372).normalize(
-        core.getInput("featureBranchName")
-      )
+      result =
+        workspacePrefix +
+        __nccwpck_require__(372).normalize(core.getInput("featureBranchName"))
     } else if (workspaceType === "repo") {
       result = __nccwpck_require__(264).normalize(
         core.getInput("repoName"),

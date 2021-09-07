@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/cbsinteractive/tfc-workspace-name-action/compare/1.0.2...1.1.0) (2021-09-07)
+
+
+### Features
+
+* Support an optional workspace name prefix ([#6](https://github.com/cbsinteractive/tfc-workspace-name-action/issues/6)) ([c4d6bef](https://github.com/cbsinteractive/tfc-workspace-name-action/commit/c4d6bef7645c9f676802aa0db93de8d6d866767c))
+
 ## [1.0.2](https://github.com/cbsinteractive/tfc-workspace-name-action/compare/1.0.1...1.0.2) (2021-07-15)
 
 
