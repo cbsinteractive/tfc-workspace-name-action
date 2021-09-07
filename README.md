@@ -11,6 +11,7 @@ Generates a Terraform Cloud workspace name normalized according to conventions u
   - [featureBranchName](#featurebranchname)
   - [repoName](#reponame)
   - [suffix](#suffix)
+  - [workspacePrefix](#workspaceprefix)
 - [Outputs](#outputs)
   - [workspaceName](#workspacename)
 - [Example Usage](#example-usage)
@@ -34,6 +35,10 @@ The name of the repo from which to derive a repo TFC workspace name.
 
 The suffix to append to a repo TFC workspace name.
 
+### `workspacePrefix`
+
+A prefix to prepend to the calculated workspace name. **Currently for feature branches only.**
+
 ## Outputs
 
 ### `workspaceName`
@@ -47,9 +52,10 @@ The name of a Terraform Cloud workspace derived from input paramters.
   with:
     type: feature
     featureBranchName: some-branch-name_with-infra
+    workspacePrefix: myproject-
 ```
 
-Produces: `somebranchname`
+Produces: `myproject-somebranchname`
 
 ```yaml
 - uses: cbsinteractive/tfc-workspace-name-action@v1

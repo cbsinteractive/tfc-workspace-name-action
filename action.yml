@@ -16,6 +16,9 @@ inputs:
   suffix:
     description: "The suffix to append to a repo TFC workspace name."
     required: false
+  workspacePrefix:
+    description: "For feature branches, a prefix to prepend to the calculated workspace name."
+    required: false
 outputs:
   workspaceName:
     description: "The name of the derived TFC workspace."
