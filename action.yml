@@ -22,3 +22,5 @@ inputs:
 outputs:
   workspaceName:
     description: "The name of the derived TFC workspace."
+  branchToken:
+    description: "The branch token portion of the workspace name."

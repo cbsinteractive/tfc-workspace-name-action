@@ -10,7 +10,7 @@ describe("Derives the expected feature workspace names", () => {
         type: "feature",
         featureBranchName: "JIRA-12345_some-feature_with-infra",
       },
-      expectedOutput: ["workspaceName", "jira12345-somefeature"],
+      expectedOutput: [["workspaceName", "jira12345-somefeature"]],
     },
     {
       description: "Feature branch; removes -with-infra suffix",
@@ -18,7 +18,7 @@ describe("Derives the expected feature workspace names", () => {
         type: "feature",
         featureBranchName: "some-feature-with-infra",
       },
-      expectedOutput: ["workspaceName", "somefeature"],
+      expectedOutput: [["workspaceName", "somefeature"]],
     },
     {
       description: "Feature branch; removes with-infra- prefix",
@@ -26,7 +26,7 @@ describe("Derives the expected feature workspace names", () => {
         type: "feature",
         featureBranchName: "with-infra-some-feature",
       },
-      expectedOutput: ["workspaceName", "somefeature"],
+      expectedOutput: [["workspaceName", "somefeature"]],
     },
     {
       description: "Feature branch; leaves embedded -with-infra- alone",
@@ -34,7 +34,7 @@ describe("Derives the expected feature workspace names", () => {
         type: "feature",
         featureBranchName: "foo-with-infra-bar",
       },
-      expectedOutput: ["workspaceName", "foowithinfrabar"],
+      expectedOutput: [["workspaceName", "foowithinfrabar"]],
     },
     {
       description: "Feature branch; removes embedded _with-infra_ token",
@@ -42,7 +42,7 @@ describe("Derives the expected feature workspace names", () => {
         type: "feature",
         featureBranchName: "foo_with-infra_bar",
       },
-      expectedOutput: ["workspaceName", "foo-bar"],
+      expectedOutput: [["workspaceName", "foo-bar"]],
     },
     {
       description: "Feature branch prefix is supported",
@@ -51,7 +51,19 @@ describe("Derives the expected feature workspace names", () => {
         featureBranchName: "this-is-a-test",
         workspacePrefix: "foo-",
       },
-      expectedOutput: ["workspaceName", "foo-thisisatest"],
+      expectedOutput: [["workspaceName", "foo-thisisatest"]],
+    },
+    {
+      description: "Branch token is supported",
+      getInput: {
+        type: "feature",
+        featureBranchName: "this-is-a-test",
+        workspacePrefix: "foo-",
+      },
+      expectedOutput: [
+        ["workspaceName", "foo-thisisatest"],
+        ["branchToken", "thisisatest"],
+      ],
     },
     {
       description:
@@ -61,7 +73,7 @@ describe("Derives the expected feature workspace names", () => {
         repoName: "some-repo",
         suffix: "-some-suffix",
       },
-      expectedOutput: ["workspaceName", "somerepo-some-suffix"],
+      expectedOutput: [["workspaceName", "somerepo-some-suffix"]],
     },
   ]
   let core
@@ -81,9 +93,12 @@ describe("Derives the expected feature workspace names", () => {
         expect(core.setFailed).not.toHaveBeenCalled()
       }
       if (testConfig.expectedOutput) {
-        expect(core.setOutput).toHaveBeenCalledWith(
-          ...testConfig.expectedOutput
-        )
+        for (let i = 0; i < testConfig.expectedOutput.length; i++) {
+          expect(core.setOutput).toHaveBeenNthCalledWith(
+            i + 1,
+            ...testConfig.expectedOutput[i]
+          )
+        }
       }
     })
   })
