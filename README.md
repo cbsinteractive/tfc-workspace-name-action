@@ -45,6 +45,10 @@ A prefix to prepend to the calculated workspace name. **Currently for feature br
 
 The name of a Terraform Cloud workspace derived from input paramters.
 
+### `branchToken`
+
+The branch token portion of the workspace name.
+
 ## Example Usage
 
 ```yaml
@@ -55,7 +59,12 @@ The name of a Terraform Cloud workspace derived from input paramters.
     workspacePrefix: myproject-
 ```
 
-Produces: `myproject-somebranchname`
+Produces:
+
+| Output        | Value                    |
+| ------------- | ------------------------ |
+| workspaceName | myproject-somebranchname |
+| branchToken   | somebranchname           |
 
 ```yaml
 - uses: cbsinteractive/tfc-workspace-name-action@v1
@@ -65,7 +74,11 @@ Produces: `myproject-somebranchname`
     suffix: -prod
 ```
 
-Produces: `myproduct-prod`
+Produces:
+
+| Output        | Value          |
+| ------------- | -------------- |
+| workspaceName | myproduct-prod |
 
 ### Version Selection
 
