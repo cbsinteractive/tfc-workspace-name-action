@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/cbsinteractive/tfc-workspace-name-action/compare/1.1.0...1.2.0) (2021-09-13)
+
+
+### Features
+
+* Add branchToken output ([8975e38](https://github.com/cbsinteractive/tfc-workspace-name-action/commit/8975e38c97b0138dba1b819935146251b9c2fd0c))
+
 # [1.1.0](https://github.com/cbsinteractive/tfc-workspace-name-action/compare/1.0.2...1.1.0) (2021-09-07)
 
 
