@@ -54,6 +54,18 @@ describe("Derives the expected feature workspace names", () => {
       expectedOutput: [["workspaceName", "foo-thisisatest"]],
     },
     {
+      description: "Feature branch slash removed",
+      getInput: {
+        type: "feature",
+        featureBranchName: "bar/baz",
+        workspacePrefix: "foo-",
+      },
+      expectedOutput: [
+        ["workspaceName", "foo-barbaz"],
+        ["branchToken", "barbaz"],
+      ],
+    },
+    {
       description: "Branch token is supported",
       getInput: {
         type: "feature",
