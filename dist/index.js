@@ -485,6 +485,7 @@ module.exports = {
     return branchName
       .replace(/^with[-_]?infra[-_]?/i, "")
       .replace(/[-_]?with[-_]?infra$/i, "")
+      .replace(/\//, "")
       .split("_")
       .map(__nccwpck_require__(767).normalize)
       .filter((token) => {

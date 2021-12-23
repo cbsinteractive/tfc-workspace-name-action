@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/cbsinteractive/tfc-workspace-name-action/compare/1.2.0...1.2.1) (2021-12-23)
+
+
+### Bug Fixes
+
+* Remove any slash from branch name ([209a98c](https://github.com/cbsinteractive/tfc-workspace-name-action/commit/209a98ce4356372cc3c97ea4c0a8dade28986b9d))
+
 # [1.2.0](https://github.com/cbsinteractive/tfc-workspace-name-action/compare/1.1.0...1.2.0) (2021-09-13)
 
 
