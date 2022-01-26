@@ -1,6 +1,8 @@
 module.exports = {
   normalize: (branchName) => {
-    return branchName
+    // Remove "ref/heads/" if it was given
+    branchName = branchName.replace("refs/heads/", "")
+    const branchToken = branchName
       .replace(/^with[-_]?infra[-_]?/i, "")
       .replace(/[-_]?with[-_]?infra$/i, "")
       .replace(/\//, "")
@@ -10,5 +12,6 @@ module.exports = {
         return token !== "withinfra"
       })
       .join("-")
+    return { branchName, branchToken }
   },
 }

@@ -6,10 +6,11 @@ module.exports = async (core) => {
     })
     let result
     let branchToken
+    let branchName
     if (workspaceType === "feature") {
-      branchToken = require("./featurebranch").normalize(
+      ;({ branchToken, branchName } = require("./featurebranch").normalize(
         core.getInput("featureBranchName")
-      )
+      ))
       result = workspacePrefix + branchToken
     } else if (workspaceType === "repo") {
       result = require("./repo").normalize(
@@ -24,6 +25,9 @@ module.exports = async (core) => {
     core.setOutput("workspaceName", result)
     if (branchToken) {
       core.setOutput("branchToken", branchToken)
+    }
+    if (branchName) {
+      core.setOutput("branchName", branchName)
     }
   } catch (error) {
     core.setFailed(error.message)

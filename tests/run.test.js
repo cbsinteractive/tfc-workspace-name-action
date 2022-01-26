@@ -87,6 +87,19 @@ describe("Derives the expected feature workspace names", () => {
       },
       expectedOutput: [["workspaceName", "somerepo-some-suffix"]],
     },
+    {
+      description: "Support full event ref; set branchName output",
+      getInput: {
+        type: "feature",
+        featureBranchName: "refs/heads/freddy/test",
+        workspacePrefix: "foo-",
+      },
+      expectedOutput: [
+        ["workspaceName", "foo-freddytest"],
+        ["branchToken", "freddytest"],
+        ["branchName", "freddy/test"],
+      ],
+    },
   ]
   let core
   beforeEach(() => {
