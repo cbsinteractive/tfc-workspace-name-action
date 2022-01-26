@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/cbsinteractive/tfc-workspace-name-action/compare/1.2.1...1.3.0) (2022-01-26)
+
+
+### Features
+
+* Add branchName output; support full event ref ([010ac6e](https://github.com/cbsinteractive/tfc-workspace-name-action/commit/010ac6e77f18a868164e5f9659aa361e9fa7297d))
+
 ## [1.2.1](https://github.com/cbsinteractive/tfc-workspace-name-action/compare/1.2.0...1.2.1) (2021-12-23)
 
 

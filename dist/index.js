@@ -482,7 +482,9 @@ exports.toCommandValue = toCommandValue;
 
 module.exports = {
   normalize: (branchName) => {
-    return branchName
+    // Remove "ref/heads/" if it was given
+    branchName = branchName.replace("refs/heads/", "")
+    const branchToken = branchName
       .replace(/^with[-_]?infra[-_]?/i, "")
       .replace(/[-_]?with[-_]?infra$/i, "")
       .replace(/\//, "")
@@ -492,6 +494,7 @@ module.exports = {
         return token !== "withinfra"
       })
       .join("-")
+    return { branchName, branchToken }
   },
 }
 
@@ -521,10 +524,11 @@ module.exports = async (core) => {
     })
     let result
     let branchToken
+    let branchName
     if (workspaceType === "feature") {
-      branchToken = __nccwpck_require__(372).normalize(
+      ;({ branchToken, branchName } = __nccwpck_require__(372).normalize(
         core.getInput("featureBranchName")
-      )
+      ))
       result = workspacePrefix + branchToken
     } else if (workspaceType === "repo") {
       result = __nccwpck_require__(264).normalize(
@@ -539,6 +543,9 @@ module.exports = async (core) => {
     core.setOutput("workspaceName", result)
     if (branchToken) {
       core.setOutput("branchToken", branchToken)
+    }
+    if (branchName) {
+      core.setOutput("branchName", branchName)
     }
   } catch (error) {
     core.setFailed(error.message)
